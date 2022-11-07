@@ -92,7 +92,7 @@
         alert('invaid Input ..!!')
       } else {
         try {
-          let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=3939c9ab613b852a1aa00ee80784899e`;
+          let url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=3939c9ab613b852a1aa00ee80784899e`;
           const response = await fetch(url);
           const data = await response.json();
           const arrdata = [data];
@@ -118,10 +118,9 @@
           else {
             document.getElementById('tempSign').innerHTML = '<i class="fas fa-cloud" style="color:#44c3de"></i>'
           }
-
         }
         catch {
-
+         alert('no such city found..!!')
         }
       }
     }
