@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <style>
+       *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
       #maindiv{
         min-height:87.5vh;display: flex;text-align: center;align-items: center;
       }
@@ -13,12 +18,19 @@
           width:50%;
           padding: 5vw;
         }
+        img{
+          width:40vw; 
+        }
       @media screen and (max-width:800px) {
         #maindiv{
-          display: block;
+          display:grid;
+          padding: 16.5vh 0;
         }        
         #maindiv div{
           width: 100%;
+        }
+        #maindiv img{
+          width:55vw;
         }
       }
     </style>
@@ -34,8 +46,8 @@
            <p>Lorem ipsum dolor sit amet consectetur adipisicing eli</p>
            <a class="btn btn-sm btn-primary" href="/weather">Check Now</a>
         </div>
-        <div  style="text-align: center;padding-top:1vw">
-            <img style="width:40vw" src="https://pragativadi.com/wp-content/uploads/2022/07/SAVE_20220703_084840.jpg" alt="ghj">
+        <div  style="text-align: center;">
+            <img src="https://pragativadi.com/wp-content/uploads/2022/07/SAVE_20220703_084840.jpg" alt="ghj">
         </div>
       </div>
       {{>footer}}

@@ -12,13 +12,22 @@
       #maindiv div{
           width:50%;
           padding: 5vw;
-        }
+      }
+      img{
+        width:40vw; 
+      }  
       @media screen and (max-width:800px) {
         #maindiv{
-          display: block;
+          display: grid;
+          padding: 16.5vh 0;
+          min-height:87.5vh;
         }        
         #maindiv div{
           width: 100%;
+          padding:3vw;
+        }
+        #maindiv img{
+          width:55vw;
         }
       }
     </style>
@@ -29,14 +38,14 @@
       {{>header}}
       <div id="maindiv">
         <div  style="text-align: center">
-            <img style="width:40vw" src="https://media.istockphoto.com/vectors/weather-icons-set-vector-id1225639749?k=20&m=1225639749&s=612x612&w=0&h=wMzoyNFDyx6ewmaBU_lnqp1R7EEpyvxVkdBcgb1Yt0o=" alt="">
+            <img src="https://media.istockphoto.com/vectors/weather-icons-set-vector-id1225639749?k=20&m=1225639749&s=612x612&w=0&h=wMzoyNFDyx6ewmaBU_lnqp1R7EEpyvxVkdBcgb1Yt0o=" alt="">
         </div>
-        <div style="text-align: center;padding-top:1vw">
+        <div style="text-align:center;">
            <h1>Local Weather App</h1>
            <h2 style="color:rgb(113, 148, 255)">perfect weather BoardCast</h2>
            <p>Hello this is a express weather application</p>
            <h3>☁️☀️🌨️🌂🌤️🌦️</h3>
-        </div>        
+        </div>       
       </div>
       {{>footer}}
       <!-- JavaScript Bundle with Popper -->
