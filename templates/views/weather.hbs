@@ -89,8 +89,14 @@
           const response = await fetch(url);
           const data = await response.json();
           const arrdata = [data];
+
           if(arrdata!=null)
-          {document.getElementById('toggleBtn').disabled=false;}
+          {var btnnn=document.getElementById('toggleBtn');
+          btnnn.disabled=false;
+          btnnn.checked=false;
+          document.getElementById('btnText').innerHTML = "celcius to farenheit";
+          }
+          
           document.getElementById("dataCity").innerHTML = arrdata[0].name;
           document.getElementById("dataCountry").innerHTML = arrdata[0].sys.country;
           document.getElementById("mainTemp").innerHTML = arrdata[0].main.temp + "°C";
