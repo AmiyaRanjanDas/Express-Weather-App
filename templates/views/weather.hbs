@@ -16,7 +16,7 @@
 
 <body>
   {{>header}}
-  <div style="height:87.5vh;display:grid;text-align:center;place-items:center">
+  <div style="display:grid;text-align:center;place-items:center;margin:3vw">
     <div>
       <h3>Enter your City:</h3>
       <form style="margin-bottom:1.5vw" class="d-flex" role="search">
@@ -29,7 +29,7 @@
       </div>
       <div style="border:2px solid black;margin-top:1.5vw">
         <div
-          style="border-bottom:2px solid rgb(255, 255, 255);display:flex;justify-content:space-between;background:rgb(162 197 250);padding:0.5vw">
+          style="border-bottom:2px solid rgb(255, 255, 255);display:flex;justify-content:space-between;background:rgb(162 197 250);padding:1vw">
           <h5 style="margin:0" id="setDay">Day</h5>
           <h5 style="margin:0" id="setTime">time</h5>
         </div>
@@ -42,15 +42,15 @@
             <h4 id="mainTemp">Temp</h4>
           </div>
           <div>
-            <h1 style="padding:5px;font-size:6vw" id="tempSign"><i class="fas fa-sun"
+            <h1 style="padding:1vh;font-size:6vh" id="tempSign"><i class="fas fa-sun"
                 style="color:rgb(234, 255, 0)"></i></h1>
           </div>
         </div>
-        <div style="border-top:2px solid white;background:rgb(58 135 247);padding:0.5vw">
+        <div style="border-top:2px solid white;background:rgb(58 135 247);padding:1vw">
           <h6 style="margin:0" id="minTemp">mintemp</h6>
           <h6 style="margin:0" id="maxTemp">maxtemp</h6>
         </div>
-        <div style="border-top:2px solid white;background:rgb(162 197 250);padding:0.5vw">
+        <div style="border-top:2px solid white;background:rgb(162 197 250);padding:1vw">
           <h6 style="margin:0" id="windSpeed">windspeed</h6>
           <h6 style="margin:0" id="humidity">humidity</h6>
         </div>
@@ -79,7 +79,6 @@
     const submitBtn = document.getElementById("subBtn");
     const cityName = document.getElementById("cityName");
     const getInfo = async (event) => {
-      document.getElementById('toggleBtn').disabled=false;
       event.preventDefault();
       let cityVal = cityName.value;
       if (cityVal === '') {
@@ -90,6 +89,8 @@
           const response = await fetch(url);
           const data = await response.json();
           const arrdata = [data];
+          if(arrdata!=null)
+          {document.getElementById('toggleBtn').disabled=false;}
           document.getElementById("dataCity").innerHTML = arrdata[0].name;
           document.getElementById("dataCountry").innerHTML = arrdata[0].sys.country;
           document.getElementById("mainTemp").innerHTML = arrdata[0].main.temp + "°C";
